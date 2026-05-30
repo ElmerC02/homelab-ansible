@@ -1,0 +1,9 @@
+---
+- name: Update all nodes
+  hosts: k3s_nodes
+  become: yes
+  tasks:
+    - name: Update apt cache and upgrade packages
+      apt:
+        update_cache: yes
+        upgrade: yes
